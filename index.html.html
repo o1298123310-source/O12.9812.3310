@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自滅選擇論 (자멸선택론) - 즉시접속!!! [인생역쩐] - 무삭제 풀버전!!!</title>
+    <style>
+        /* 배경 strobe 애니메이션 */
+        @keyframes strobeBg {
+            0% { background-color: #ff1493; }
+            50% { background-color: #ff0000; }
+            100% { background-color: #ff1493; }
+        }
+
+        /* 텍스트 무지개색 애니메이션 */
+        @keyframes chaoticText {
+            0% { color: #ff0000; }
+            20% { color: #00ff00; }
+            40% { color: #0000ff; }
+            60% { color: #ffff00; }
+            80% { color: #ff00ff; }
+            100% { color: #ff0000; }
+        }
+
+        /* 흔들림 애니메이션 */
+        @keyframes jitter {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Batang', serif;
+            color: black;
+            animation: strobeBg 0.1s infinite;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36z8gAFUASYGSAAnA+shm4ACgDAB8fDAW6+8V/AAAAAElFTkSuQmCC');
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: white;
+            border: 20px solid #cc0000;
+            box-shadow: 20px 20px 0px black;
+        }
+
+        /* 흐르는 글자 스타일 */
+        .marquee-top, .marquee-bottom {
+            background-color: black;
+            color: yellow;
+            font-weight: bold;
+            padding: 5px 0;
+            font-size: 1.2rem;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 5px solid yellow;
+        }
+        .marquee-bottom {
+            margin: 20px -20px -20px -20px;
+            border-top: 5px solid yellow;
+            border-bottom: none;
+        }
+
+        /* 자간 파괴용 CSS 클래스 */
+        .bad-spacing { letter-spacing: -5px; } 
+        .worse-spacing { letter-spacing: 15px; } 
+        .chaotic-spacing span { margin-right: -10px; } 
+
+        header {
+            text-align: center;
+            border-bottom: 10px solid black;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .main-title-hwanja {
+            font-size: 8rem;
+            font-weight: 900;
+            color: black;
+            line-height: 1;
+            margin: 10px 0;
+            letter-spacing: -10px;
+        }
+
+        .main-title-hangul {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #cc0000;
+            text-shadow: -5px -5px 0 #000, 5px -5px 0 #000, -5px 5px 0 #000, 5px 5px 0 #000;
+            line-height: 1;
+            margin: 0;
+            letter-spacing: -3px;
+        }
+        
+        .catchphrase {
+            font-size: 2.2rem;
+            margin: 15px 0;
+            color: black;
+            font-weight: 900;
+            background-color: yellow;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        /* [추가] 신규회원 가입 버튼 섹션 */
+        .join-btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .join-btn {
+            background-color: #ff0000;
+            color: yellow;
+            font-size: 4rem;
+            font-weight: 900;
+            padding: 20px 40px;
+            border: 10px double yellow;
+            cursor: pointer;
+            animation: jitter 0.1s infinite;
+            text-shadow: 5px 5px 0px black;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.8);
+            letter-spacing: -8px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .youth-box {
+            background-color: limegreen;
+            color: white;
+            padding: 20px;
+            border: 10px solid darkgreen;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            word-spacing: -10px;
+        }
+
+        .safe-box {
+            background-color: blue;
+            color: white;
+            padding: 15px;
+            border: 5px solid skyblue;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+            animation: chaoticText 1s infinite;
+            word-spacing: 20px;
+        }
+
+        .stat-box {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border: 10px solid #ffcc00;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .stat-title { color: #ff0000; font-size: 3rem; margin: 0 0 10px 0; font-weight: 900; }
+        .stat-content { font-size: 1.2rem; color: #ffcc00; font-weight: bold; line-height: 1.3;}
+        .stat-highlight { font-size: 1.8rem; color: #ff00ff; }
+
+        .fake-ads-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .fake-ad {
+            border: 3px solid black;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            animation: jitter 0.5s infinite;
+        }
+        .fake-ad-red { background-color: #ff9999; }
+        .fake-ad-blue { background-color: #9999ff; color: white; }
+        .fake-ad-green { background-color: #99ff99; }
+        .fake-ad-purple { background-color: #cc99ff; }
+
+        .qna-section {
+            background-color: #f1f1f1;
+            border: 5px solid #ff1493;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .qna-title { font-size: 3.5rem; color: black; font-weight: bold; text-align: center; margin-bottom: 15px; }
+        .qna-item {
+            background: white;
+            border: 3px dashed #ff0000;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .question { color: black; font-weight: bold; font-size: 2rem; text-decoration: underline; }
+        .answer { color: #cc0000; margin-top: 10px; font-weight: bold; font-size: 1.3rem;}
+
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 20px;
+            border-top: 2px solid black;
+            padding-top: 10px;
+        }
+
+        @keyframes glitchText {
+            0% { color: #cc0000; }
+            50% { color: #0000cc; }
+            100% { color: #cc0000; }
+        }
+        .glitch { animation: glitchText 0.1s infinite; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="marquee-top">
+            <marquee behavior="scroll" direction="left" scrollamount="15">
+                인생역쩐!!! 가입 즉시 1000% 보장!!! 실시간 자멸 상담!!! 24시간 풀가동!!!
+            </marquee>
+        </div>
+
+        <header>
+            <p class="subtitle catchphrase bad-spacing">망할 걸 알면서 고르는 것… <span class="worse-spacing">그것이 인간…</span></p>
+            <h1 class="main-title-hwanja glitch chaotic-spacing">自<span>滅</span>選<span>擇</span>論</h1>
+            <h1 class="main-title-hangul glitch">(자멸선택론)</h1>
+            <p class="subtitle catchphrase chaotic-spacing">최최후의 승부<span>를</span> 전하고 싶습니다.</p>
+        </header>
+
+        <div class="join-btn-container">
+            <a href="https://docs.google.com/document/d/1PFgv-rg7vC4jWMHwS-gALtY4G0wuBHqr0fd4B-XZtKs/edit?usp=sharing" target="_blank" class="join-btn">신규회원 가입!</a>
+            <p style="color: red; font-weight: bold; margin-top: 10px;">▲ 클릭 시 신규가입으로 즉시 이동!!! ▲</p>
+        </div>
+
+        <div class="youth-box chaotic-spacing">
+            돈은 없지<span>만</span> 일은 하고 싶지 않은 <span>청</span>년들이여!<br>
+            <span style="font-size: 2rem;" class="worse-spacing">청춘을 바쳐라.</span>
+        </div>
+
+        <div class="safe-box bad-spacing">
+            본 사이트는 현시간 고객님의 돈을 가장 안전하게 보관 중입니다!
+        </div>
+
+        <div class="stat-box chaotic-spacing">
+            <div class="stat-title glitch worse-spacing">인생 역쩐의 기회!</div>
+            <p class="stat-content bad-spacing">
+                <span class="stat-highlight worse-spacing">재방문 의사 100%</span><br>
+                <span class="stat-highlight chaotic-spacing">환전율 1000%</span><br>
+                <span class="stat-highlight">고객만족률 10000%</span>
+            </p>
+        </div>
+
+        <div class="fake-ads-grid bad-spacing">
+            <div class="fake-ad fake-ad-red worse-spacing">광고문의: 012-9812-3310</div>
+            <div class="fake-ad fake-ad-blue">오늘의 베팅왕 선발전</div>
+            <div class="fake-ad fake-ad-green">단판 승부처: [슬롯]</div>
+            <div class="fake-ad fake-ad-purple chaotic-spacing">패배자 수용소 합류하기</div>
+        </div>
+
+        <section class="qna-section">
+            <div class="qna-title">문답 즉시공개 (Q&A)</div>
+            
+            <div class="qna-item">
+                <div class="question">Q. 실제 현금 가능한가?</div>
+                <div class="answer">A. 절대불가! 운영진은 수감되고 싶지 않다!</div>
+            </div>
+
+            <div class="qna-item">
+                <div class="question">Q. 신규 회원은??</div>
+                <div class="answer">A. 만 19세 이상 건장한 성인이라면 누구나.</div>
+            </div>
+        </section>
+
+        <div class="marquee-bottom">
+            <marquee behavior="scroll" direction="right" scrollamount="15">
+                인생을 베팅하라!!! 오늘이 마지막 기회!!! 검찰 사칭 주의!!! 실패자에게 자비는 없다!!!
+            </marquee>
+        </div>
+
+    </div>
+
+    <footer>
+        自滅選擇論 | 24시간 연중무휴 서비스 | © 2026 최후의 베팅
+    </footer>
+
+</body>
+</html>
